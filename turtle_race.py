@@ -21,6 +21,52 @@ turtleref.shape("turtle")
 turtleref.color("black")
 turtleref.speed(6)
 
+turtlefinish = turtle.Turtle()
+turtlefinish.shape("turtle")
+turtlefinish.color("black")
+turtlefinish.speed(0)
+
+#turtle.tracer(n=5, delay=0) 
+
+#finish line
+turtlefinish.penup()
+turtlefinish.goto(250,325)
+turtlefinish.pendown()
+for i in range (14):
+    #one row of squares
+    for i in range(2):
+        turtlefinish.begin_fill()
+        for i in range(4):
+            turtlefinish.forward(25)
+            turtlefinish.left(90)
+        turtlefinish.end_fill()
+        turtlefinish.forward(25)
+        for i in range(4):
+            turtlefinish.forward(25)
+            turtlefinish.left(90)
+        turtlefinish.forward(25)
+        #second row of squares
+    turtlefinish.backward(100)
+    turtlefinish.right(90)
+    turtlefinish.forward(25)
+    turtlefinish.left(90)
+    #second row of squares
+    for i in range(2):
+        for i in range(4):
+            turtlefinish.forward(25)
+            turtlefinish.left(90)
+        turtlefinish.forward(25)
+        turtlefinish.begin_fill()
+        for i in range(4):
+            turtlefinish.forward(25)
+            turtlefinish.left(90)
+        turtlefinish.end_fill()
+        turtlefinish.forward(25)
+    turtlefinish.backward(100)
+    turtlefinish.right(90)
+    turtlefinish.forward(25)
+    turtlefinish.left(90)
+
 while races > 0: 
     turtleref.penup()
     turtleref.goto(-250, 300)
@@ -93,10 +139,10 @@ turtleref.write(f"Turtle 2:{turtle2score} wins", font=("Arial", 18))
 turtleref.goto(0,0)
 
 if turtle1score > turtle2score:
-    turtleref.write("Turtle 1 Won", align="center", font=("Arial", 18))
+    turtleref.write("Turtle 1 Won", align="center", font=("Arial", 48))
 elif turtle2score > turtle1score:
-    turtleref.write("Turtle 2 Won", align="center", font=("Arial", 18))
+    turtleref.write("Turtle 2 Won", align="center", font=("Arial", 48))
 elif turtle1score == turtle2score:
-    turtleref.write("Tie!", align="center", font=("Arial", 18))
+    turtleref.write("Tie!", align="center", font=("Arial", 48))
 
 turtle.mainloop()
